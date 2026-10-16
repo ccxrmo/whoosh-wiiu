@@ -1,9 +1,9 @@
 function checkBoxClicked() {
     var toggle = document.getElementById('toggle');
-    var checkbox = toggle.getElementsByClassName('material-symbols-outlined')[0];
+    var checkbox = toggle.getElementsByClassName('material-icons')[0];
     var isChecked = toggle.getAttribute('aria-pressed') === 'true';
     toggle.setAttribute('aria-pressed', String(!isChecked));
-    checkbox.textContent = isChecked ? 'check_box_outline_blank' : 'select_check_box';
+    checkbox.innerHTML = isChecked ? '&#xe835;' : '&#xe834;';
 }
 
 function getControls() {
