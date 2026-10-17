@@ -3,12 +3,14 @@ function checkBoxClicked() {
     var checkbox = toggle.getElementsByClassName('material-icons')[0];
     var isChecked = toggle.getAttribute('aria-pressed') === 'true';
     toggle.setAttribute('aria-pressed', String(!isChecked));
-    checkbox.innerHTML = isChecked ? '&#xe835;' : '&#xe834;';
+    checkbox.innerHTML = isChecked ? '&#xe835;' : '&#xf1fe;';
 }
 
 function getControls() {
     var links = document.getElementsByTagName('a');
     var buttons = document.getElementsByTagName('button');
+    var searchScreen = document.getElementById('search-screen');
+    var searchInput = document.getElementById('search-query');
     var controls = [];
     var i;
 
@@ -16,9 +18,14 @@ function getControls() {
         controls.push(links[i]);
     }
     for (i = 0; i < buttons.length; i++) {
-        if (!buttons[i].disabled) {
+        if (!buttons[i].disabled &&
+                (buttons[i].id !== 'search-close-button' || searchScreen.style.display === 'block')) {
             controls.push(buttons[i]);
         }
+    }
+    if (searchInput && !searchInput.disabled &&
+            searchScreen.style.display === 'block') {
+        controls.push(searchInput);
     }
     return controls;
 }
@@ -186,3 +193,59 @@ if (document.addEventListener) {
 if (window.addEventListener) {
     window.addEventListener('load', startControllerNavigation, false);
 }
+
+function notImplementedPopup() {
+    window.alert("This feature has not been implemented yet. Please check back later.");
+}
+
+function toggleSearchScreen() {
+    var searchScreen = document.getElementById('search-screen');
+    if (searchScreen.style.display === 'block') {
+        closeSearchScreen();
+        return;
+    }
+
+    setMenuButtonsDisabled(true);
+    searchScreen.style.display = 'block';
+    document.getElementById('search-close-button').focus();
+}
+
+var menuButtonDisabledStates = null;
+
+function setMenuButtonsDisabled(disabled) {
+    var buttons = document.getElementsByTagName('nav')[0].getElementsByTagName('button');
+    var i;
+
+    if (disabled) {
+        if (menuButtonDisabledStates !== null) {
+            return;
+        }
+        menuButtonDisabledStates = [];
+        for (i = 0; i < buttons.length; i++) {
+            menuButtonDisabledStates.push(buttons[i].disabled);
+            buttons[i].disabled = true;
+        }
+        return;
+    }
+
+    if (menuButtonDisabledStates === null) {
+        return;
+    }
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = menuButtonDisabledStates[i];
+    }
+    menuButtonDisabledStates = null;
+}
+
+function closeSearchScreen() {
+    document.getElementById('search-screen').style.display = 'none';
+    setMenuButtonsDisabled(false);
+
+    var searchButton = document.getElementById('search-button');
+    if (!searchButton.disabled) {
+        searchButton.focus();
+    }
+}
+
+
+

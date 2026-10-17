@@ -11,100 +11,64 @@
 
 
     <body>
-        <div>
+        <div class="container">
         <nav>
             <ul>
 
                 <li>
-                    <a href="#" tabindex="0" id="menu-button" onclick="pressedSound()">
-                        <span class="tile-content">
-                            <span class="tile-content-inner">
-                                <span class="tile-label">SEARCH</span>
-                                <span class="material-icons">&#xe8b6;</span>
-                            </span>
-                        </span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" tabindex="0" id="menu-button" onclick="pressedSound()">
-                        <span class="tile-content">
-                            <span class="tile-content-inner">
-                                <span class="tile-label">FEED</span>
-                                <span class="material-icons">&#xef42;</span>
-                            </span>
-                        </span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" tabindex="0" id="menu-button" onclick="pressedSound()">
-                        <span class="tile-content">
-                            <span class="tile-content-inner">
-                                <span class="tile-label">PROFILE</span>
-                                <span class="material-icons">&#xe7fd;</span>
-                            </span>
-                        </span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" tabindex="0" id="menu-button" onclick="pressedSound(); openSettings()">
-                        <span class="tile-content">
-                            <span class="tile-content-inner">
-                                <span class="tile-label">SETTINGS</span>
-                                <span class="material-icons">&#xe8b8;</span>
-                            </span>
-                        </span>
-                    </a>
-                </li>
-        
-                <li>
-                    <a href="#" tabindex="0" id="menu-button" onclick="pressedSound()">
-                        <span class="tile-content">
-                            <span class="tile-content-inner">
-                                <span class="tile-label">POST</span>
-                                <span class="material-icons">&#xe3c9;</span>
-                            </span>
-                        </span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" tabindex="0" id="menu-button" onclick="pressedSound()">
-                        <span class="tile-content">
-                            <span class="tile-content-inner">
-                                <span class="tile-label">NOTIFICATIONS</span>
-                                <span class="material-icons">&#xe7f4;</span>
-                            </span>
-                        </span>
-                    </a>
-                </li>
-
-                <li>
-                    <button id="toggle" type="button" aria-pressed="false" onclick="checkBoxClicked(); pressedSound()">
-                        <span class="tile-content">
-                            <span class="tile-content-inner">
-                                <span class="tile-label">SOUNDS ON</span>
-                                <span class="material-icons" aria-hidden="true">&#xe835;</span>
-                            </span>
-                        </span>
+                    <button id="search-button" type="button" onclick="toggleSearchScreen();">
+                        <span class="tile-label">SEARCH</span>
+                        <span class="material-icons" aria-hidden="true">&#xe8b6;</span>
+                        <span class="description">Search for content.</span>
                     </button>
                 </li>
+
+                <li>
+                    <button id="library-button" type="button" onclick="notImplementedPopup();">
+                        <span class="tile-label">FEED</span>
+                        <span class="material-icons" aria-hidden="true">&#xe02f;</span>
+                        <span class="description">View what's going on.</span>
+                    </button>
+                </li>
+
+                <li>
+                    <button id="profile-button" type="button" onclick="notImplementedPopup();">
+                        <span class="tile-label">PROFILE</span>
+                        <span class="material-icons" aria-hidden="true">&#xe7fd;</span>
+                        <span class="description">View your profile.</span>
+                    </button>
+                </li>
+
+                <li>
+                    <button id="settings-button" type="button" onclick="openSettings();">
+                        <span class="tile-label">SETTINGS</span>
+                        <span class="material-icons" aria-hidden="true">&#xe8b8;</span>
+                        <span class="description">Change global settings of the app.</span>
+                    </button>
+                </li>
+
+                <li>
+                    <button id="toggle" type="button" aria-pressed="false" onclick="checkBoxClicked();">
+                        <span class="tile-label">SOUNDS ON</span>
+                        <span class="material-icons" aria-hidden="true">&#xe835;</span>
+                        <span class="description">Toggle sound effects on or off.</span>
+                    </button>
+                </li>
+
             </ul>
         </nav>
 
-        <main>
-            <div id="settings">
-                <h2>SETTINGS</h2>
-                <div class="settings-content">
-                <h3>Theme</h3>
-                <input type="radio" name="theme" value="light"> Light Theme <br>
-                <input type="radio" name="theme" value="dark" checked> Dark Theme <br><br><br>
-                <input type="button" value="Close" onclick="closeSettings(); pressedSound();">
-                </div>
-            </div>
-        </main>
+        <div class="sections">
+            <section id="search-screen">
+                <h2>Search</h2>
+                <input id="search-query" type="search" placeholder="Write here..."> <br>
+                <button id="search-close-button" type="button" onclick="closeSearchScreen();">Close</button>
+            </section>
+
+            <section id="settings-screen">
+                <h2>Settings</h2>
+                <h3>SpotPass Notifications</h3>
+                <input type="button" id="spotpass-toggle" value="SpotPass Not Enabled" onclick="SpotPassTogglePopup();">
         </div>
     </body>
 </html>
