@@ -248,4 +248,7 @@ function closeSearchScreen() {
 }
 
 
-
+function Pressed() {
+    audio = new Audio("./sounds/PRESS.mp3");
+    
+}
