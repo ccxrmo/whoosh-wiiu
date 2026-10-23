@@ -24,6 +24,18 @@
     src: url('./fonts/arialnarrow.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Miiverse Symbols';
+    font-weight: normal;
+    src: url('../font/MiiverseSymbols-Regular.eot');
+    src: url('../font/MiiverseSymbols-Regular.eot?#iefix') format('embedded-opentype'), url('./fonts/MiiverseSymbols-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Avenir';
+    font-weight: normal;
+    src: url('./fonts/AvenirMedium.ttf') format('truetype');
+}
 /* Navigation Styles */
 
 nav {
@@ -63,7 +75,7 @@ nav ul li button {
     padding: 10px;
     width: 240px;
     height: 240px;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(7, 168, 50, 0.7), rgba(0, 138, 230, 0.7));
     align-items: center;
     cursor: pointer;
     text-align: center;
@@ -72,6 +84,7 @@ nav ul li button {
 }
 
 .tile-label {
+    font-family: 'Avenir'!important;;
     display: block;
     font-size: 30px;
     margin: 10px 0;
