@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/astro/whoosh-wiiu/app/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

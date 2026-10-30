@@ -1,0 +1,1 @@
+/opt/devkitpro/devkitPPC/bin/powerpc-eabi-gcc.exe -mcpu=750 -meabi -mhard-float -ffunction-sections -fdata-sections -DESPRESSO -D__WIIU__ -D__WUT__ -g -O2 -DNDEBUG -L/opt/devkitpro/wut/lib -L/opt/devkitpro/portlibs/wiiu/lib -L/opt/devkitpro/portlibs/ppc/lib -specs=/opt/devkitpro/wut/share/wut.specs CMakeFiles/whoosh.dir/main.o -o whoosh.elf  -lwut -lm

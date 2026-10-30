@@ -1,0 +1,7 @@
+/home/astro/whoosh-wiiu/app/build/CMakeFiles/whoosh.dir
+/home/astro/whoosh-wiiu/app/build/CMakeFiles/edit_cache.dir
+/home/astro/whoosh-wiiu/app/build/CMakeFiles/rebuild_cache.dir
+/home/astro/whoosh-wiiu/app/build/CMakeFiles/list_install_components.dir
+/home/astro/whoosh-wiiu/app/build/CMakeFiles/install.dir
+/home/astro/whoosh-wiiu/app/build/CMakeFiles/install/local.dir
+/home/astro/whoosh-wiiu/app/build/CMakeFiles/install/strip.dir
